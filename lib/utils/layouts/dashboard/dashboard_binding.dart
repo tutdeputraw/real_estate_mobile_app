@@ -6,6 +6,6 @@ class DashboardBinding extends Bindings {
   @override
   void dependencies() {
     // BottomNavigationBinding().dependencies();
-    Get.lazyPut<DashboardController>(() => DashboardController());
+    Get.put<DashboardController>(DashboardController());
   }
 }

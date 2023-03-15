@@ -4,8 +4,8 @@ import 'package:real_estate_mobile_app/features/owner_buyer/home/owner_buyer_hom
 class OwnerBuyerHomeBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut<OwnerBuyerHomeController>(
-      () => OwnerBuyerHomeController(),
+    Get.put<OwnerBuyerHomeController>(
+      OwnerBuyerHomeController(),
     );
   }
 }

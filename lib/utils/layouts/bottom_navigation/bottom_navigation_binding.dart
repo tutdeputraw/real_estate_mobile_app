@@ -4,6 +4,6 @@ import 'package:real_estate_mobile_app/utils/layouts/bottom_navigation/bottom_na
 class BottomNavigationBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut<BottomNavigationController>(() => BottomNavigationController());
+    Get.put<BottomNavigationController>(BottomNavigationController());
   }
 }

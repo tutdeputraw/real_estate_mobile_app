@@ -4,8 +4,8 @@ import 'package:real_estate_mobile_app/features/auth/sign_out/sign_out_controlle
 class SignOutBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut<SignOutController>(
-      () => SignOutController(),
+    Get.put<SignOutController>(
+      SignOutController(),
     );
   }
 }

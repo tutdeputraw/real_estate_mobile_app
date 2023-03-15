@@ -14,8 +14,8 @@ class OwnerBuyerDashboardBinding extends Bindings {
     SettingsBinding().dependencies();
     BottomNavigationBinding().dependencies();
 
-    Get.lazyPut<DashboardController>(
-      () => OwnerBuyerDashboardController(),
+    Get.put<DashboardController>(
+      OwnerBuyerDashboardController(),
     );
   }
 }

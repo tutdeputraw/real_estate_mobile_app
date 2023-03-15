@@ -4,8 +4,8 @@ import 'package:real_estate_mobile_app/features/external_advisor/dashboard/exter
 class ExternalAdvisorDashboardBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut<ExternalAdvisorDashboardController>(
-      () => ExternalAdvisorDashboardController(),
+    Get.put<ExternalAdvisorDashboardController>(
+      ExternalAdvisorDashboardController(),
     );
   }
 }

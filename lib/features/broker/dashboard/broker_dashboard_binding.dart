@@ -4,6 +4,6 @@ import 'package:real_estate_mobile_app/features/broker/dashboard/broker_dashboar
 class BrokerDashboardBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut<BrokerDashboardController>(() => BrokerDashboardController());
+    Get.put<BrokerDashboardController>(BrokerDashboardController());
   }
 }

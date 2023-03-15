@@ -6,6 +6,6 @@ class SettingsBinding extends Bindings {
   @override
   void dependencies() {
     SignOutBinding().dependencies();
-    Get.lazyPut<SettingsController>(() => SettingsController());
+    Get.put<SettingsController>(SettingsController());
   }
 }
