@@ -3,6 +3,8 @@
 class PageNames {
   static const SETTINGS = "/settings";
   static const SEARCH = "/search";
+  static const LOADING = "/loading";
+  static const SIGN_IN = "/sign-in";
 
   // owner buyer
   static const OWNER_BUYER_DASHBOARD = "/owner-buyer/dashboard";
