@@ -1,6 +1,6 @@
 import 'package:real_estate_mobile_app/utils/helpers/base_controller/base_controller.dart';
 
-class RealEstateDetailController extends BaseController {
+class MyRealEstateController extends BaseController {
   @override
   Future<void> callAPI({int page = 1}) {
     // TODO: implement callAPI

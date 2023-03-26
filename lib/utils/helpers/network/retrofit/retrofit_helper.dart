@@ -25,6 +25,9 @@ class RetrofitHelper {
     Map<String, String>? headers,
     T Function(dynamic)? converter,
   }) async {
+    headers ??= {};
+    headers.addAll({'Content-Type': 'application/json'});
+
     final uri = Uri.parse(baseUrl + path);
     final response =
         await http.post(uri, body: jsonEncode(body), headers: headers);

@@ -4,6 +4,8 @@ import 'package:real_estate_mobile_app/features/auth/sign_in/sign_in_page.dart';
 import 'package:real_estate_mobile_app/features/broker/dashboard/broker_dashboard_binding.dart';
 import 'package:real_estate_mobile_app/features/external_advisor/dashboard/external_advisor_dashboard_binding.dart';
 import 'package:real_estate_mobile_app/features/owner_buyer/dashboard/owner_buyer_dashboard_binding.dart';
+import 'package:real_estate_mobile_app/features/owner_buyer/home/components/my_real_estate/my_real_estate_binding.dart';
+import 'package:real_estate_mobile_app/features/owner_buyer/home/components/my_real_estate/my_real_estate_page.dart';
 import 'package:real_estate_mobile_app/features/settings/settings_binding.dart';
 import 'package:real_estate_mobile_app/features/settings/settings_page.dart';
 import 'package:real_estate_mobile_app/routes/page_names.dart';
@@ -32,6 +34,11 @@ class PageRoutes {
       name: PageNames.OWNER_BUYER_DASHBOARD,
       page: () => const DashboardPage(),
       binding: OwnerBuyerDashboardBinding(),
+    ),
+    GetPage(
+      name: PageNames.OWNER_BUYER_HOME_MY_REAL_ESTATE,
+      page: () => const MyRealEstatePage(),
+      binding: MyRealEstateBinding(),
     ),
 
     // external advisor

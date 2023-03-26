@@ -15,6 +15,7 @@ class AuthController extends GetxController {
 
   User? get user {
     if (storage.has(StorageConstants.USERS)) {
+      print('masok kenerrrr');
       return User.fromJson(storage.get(StorageConstants.USERS));
     } else {
       return null;
@@ -23,7 +24,7 @@ class AuthController extends GetxController {
 
   @override
   void onInit() {
-    authState.value = const AuthState(appStatus: AppType.AUTHENTICATED);
+    authState.value = const AuthState(appStatus: AppType.INITIAL);
     super.onInit();
   }
 
@@ -40,6 +41,7 @@ class AuthController extends GetxController {
       await checkToken();
     } else if (state?.appStatus == AppType.UNAUTHENTICATED) {
       await clearData();
+      print("MASOK KENE");
       Get.offAllNamed(PageNames.SIGN_IN);
     } else if (state?.appStatus == AppType.AUTHENTICATED) {
       _authenticatedUser();
@@ -61,9 +63,12 @@ class AuthController extends GetxController {
   }
 
   Future<void> checkToken() async {
+    print('onok gak?checkToken ${storage.has(StorageConstants.USERS)}');
     if (storage.has(StorageConstants.USERS)) {
+      print('masok 1');
       setAuth();
     } else {
+      print('masok 2');
       signOut();
     }
   }
@@ -75,6 +80,7 @@ class AuthController extends GetxController {
 
   Future<void> saveAuthData({required User user, required String token}) async {
     await storage.write(StorageConstants.USERS, user.toJson());
+    print('onok gak? save auth ${storage.has(StorageConstants.USERS)}');
     await secureStorage.setToken(value: token);
     setAuth();
   }

@@ -9,6 +9,8 @@ class PageNames {
   // owner buyer
   static const OWNER_BUYER_DASHBOARD = "/owner-buyer/dashboard";
   static const OWNER_BUYER_HOME = "/owner-buyer/home";
+  static const OWNER_BUYER_HOME_MY_REAL_ESTATE =
+      "/owner-buyer/home/my-real-estate";
 
   // external advisor
   static const EXTERNAL_ADVISOR_DASHBOARD = "/external-advisor/dashboard";

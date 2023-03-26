@@ -16,4 +16,18 @@ class RetrofitAPI {
     );
     return response;
   }
+
+  static Future<dynamic> checkIfUserExist({
+    required String username,
+    required String orgname,
+  }) async {
+    final response = await RetrofitHelper.post<Map<String, dynamic>>(
+      path: '/user/checkIfUserExist',
+      body: {
+        'username': username,
+        'organizationName': orgname,
+      },
+    );
+    return response;
+  }
 }
