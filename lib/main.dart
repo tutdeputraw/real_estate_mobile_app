@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'Flutter Demo',
       getPages: PageRoutes.pages,
+      debugShowCheckedModeBanner: false,
       initialRoute: PageNames.LOADING,
       theme: ThemeData(
         primarySwatch: Colors.blue,

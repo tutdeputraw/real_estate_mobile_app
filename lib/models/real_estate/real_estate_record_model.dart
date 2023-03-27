@@ -14,13 +14,13 @@ class RealEstateRecord {
   String zipCode;
 
   RealEstateRecord({
+    required this.id,
     required this.acreLot,
     required this.bath,
     required this.bed,
     required this.city,
     required this.fullAddress,
     required this.houseSize,
-    required this.id,
     required this.isOpenToSell,
     required this.ownerId,
     required this.price,

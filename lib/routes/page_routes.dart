@@ -4,8 +4,10 @@ import 'package:real_estate_mobile_app/features/auth/sign_in/sign_in_page.dart';
 import 'package:real_estate_mobile_app/features/broker/dashboard/broker_dashboard_binding.dart';
 import 'package:real_estate_mobile_app/features/external_advisor/dashboard/external_advisor_dashboard_binding.dart';
 import 'package:real_estate_mobile_app/features/owner_buyer/dashboard/owner_buyer_dashboard_binding.dart';
-import 'package:real_estate_mobile_app/features/owner_buyer/home/components/my_real_estate/my_real_estate_binding.dart';
-import 'package:real_estate_mobile_app/features/owner_buyer/home/components/my_real_estate/my_real_estate_page.dart';
+import 'package:real_estate_mobile_app/features/owner_buyer/my_real_estate/my_real_estate_binding.dart';
+import 'package:real_estate_mobile_app/features/owner_buyer/my_real_estate/my_real_estate_page.dart';
+import 'package:real_estate_mobile_app/features/real_estate/detail/real_estate_detail_binding.dart';
+import 'package:real_estate_mobile_app/features/real_estate/detail/real_estate_detail_page.dart';
 import 'package:real_estate_mobile_app/features/settings/settings_binding.dart';
 import 'package:real_estate_mobile_app/features/settings/settings_page.dart';
 import 'package:real_estate_mobile_app/routes/page_names.dart';
@@ -27,6 +29,11 @@ class PageRoutes {
     GetPage(
       name: PageNames.LOADING,
       page: () => const LoadingPage(),
+    ),
+    GetPage(
+      name: PageNames.REAL_ESTATE_DETAIL,
+      page: () => const RealEstateDetailPage(),
+      binding: RealEstateDetailBinding(),
     ),
 
     // owner buyer

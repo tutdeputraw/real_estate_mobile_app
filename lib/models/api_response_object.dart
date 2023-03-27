@@ -32,7 +32,7 @@
 class APIResponseObject<T> {
   final T data;
   final String message;
-  final String success;
+  final bool success;
 
   APIResponseObject({
     required this.data,
