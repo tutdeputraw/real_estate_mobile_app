@@ -8,17 +8,21 @@ class SearchSearchForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetBuilder<SearchController>(builder: (controller) {
-      return Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          TextField(
-            controller: controller.teKeyword,
-          ),
-          ElevatedButton(
-            onPressed: () => controller.searchOnClicked(),
-            child: Text("search"),
-          ),
-        ],
+      return Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            TextField(
+              controller: controller.teKeyword,
+            ),
+            const SizedBox(height: 8),
+            ElevatedButton(
+              onPressed: () => controller.searchOnClicked(),
+              child: Text("search"),
+            ),
+          ],
+        ),
       );
     });
   }

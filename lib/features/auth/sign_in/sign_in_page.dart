@@ -26,14 +26,28 @@ class SignInPage extends StatelessWidget {
                   TextField(
                     controller: controller.teOrg,
                     decoration: const InputDecoration(
-                      hintText: 'Enter your org name',
+                      hintText: 'Org Name',
+                    ),
+                  ),
+                  const SizedBox(height: 8),
+                  TextField(
+                    controller: controller.teMSP,
+                    decoration: const InputDecoration(
+                      hintText: 'User MSP',
                     ),
                   ),
                   const SizedBox(height: 8),
                   TextField(
                     controller: controller.teName,
                     decoration: const InputDecoration(
-                      hintText: 'Enter your name',
+                      hintText: 'User Name',
+                    ),
+                  ),
+                  const SizedBox(height: 8),
+                  TextField(
+                    controller: controller.teEmail,
+                    decoration: const InputDecoration(
+                      hintText: 'Email',
                     ),
                   ),
                   const SizedBox(height: 8),

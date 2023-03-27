@@ -14,6 +14,7 @@ class OwnerBuyerHomePage extends StatelessWidget {
         padding: const EdgeInsets.all(8.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: const [
             OwnerBuyerHomeButton(
               routePath: PageNames.OWNER_BUYER_HOME_MY_REAL_ESTATE,

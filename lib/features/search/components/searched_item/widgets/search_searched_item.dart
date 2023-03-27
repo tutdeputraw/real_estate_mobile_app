@@ -16,7 +16,8 @@ class SearchSearchedItem extends StatelessWidget {
       onTap: () {
         // Get.toNamed(page)
       },
-      title: Text(data.record.fullAddress),
+      title: Text(
+          '${data.record.id} - [full address: ${data.record.fullAddress}]'),
     );
   }
 }

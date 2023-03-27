@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 import 'package:real_estate_mobile_app/features/auth/auth/auth_state.dart';
-import 'package:real_estate_mobile_app/models/user.dart';
+import 'package:real_estate_mobile_app/models/user/user_record_model.dart';
 import 'package:real_estate_mobile_app/routes/page_names.dart';
 import 'package:real_estate_mobile_app/utils/helpers/secure_storage/secure_storage_helper.dart';
 import 'package:real_estate_mobile_app/utils/helpers/storage/storage_constants.dart';
@@ -13,10 +13,9 @@ class AuthController extends GetxController {
   var storage = StorageHelper();
   var secureStorage = SecureStorageHelper();
 
-  User? get user {
+  UserRecord? get user {
     if (storage.has(StorageConstants.USERS)) {
-      print('masok kenerrrr');
-      return User.fromJson(storage.get(StorageConstants.USERS));
+      return UserRecord.fromJson(storage.get(StorageConstants.USERS));
     } else {
       return null;
     }
@@ -41,7 +40,6 @@ class AuthController extends GetxController {
       await checkToken();
     } else if (state?.appStatus == AppType.UNAUTHENTICATED) {
       await clearData();
-      print("MASOK KENE");
       Get.offAllNamed(PageNames.SIGN_IN);
     } else if (state?.appStatus == AppType.AUTHENTICATED) {
       _authenticatedUser();
@@ -78,7 +76,8 @@ class AuthController extends GetxController {
     await secureStorage.setToken(value: '');
   }
 
-  Future<void> saveAuthData({required User user, required String token}) async {
+  Future<void> saveAuthData(
+      {required UserRecord user, required String token}) async {
     await storage.write(StorageConstants.USERS, user.toJson());
     print('onok gak? save auth ${storage.has(StorageConstants.USERS)}');
     await secureStorage.setToken(value: token);

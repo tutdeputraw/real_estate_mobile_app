@@ -5,6 +5,14 @@ class RealEstateDetailPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      appBar: AppBar(),
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          children: [],
+        ),
+      ),
+    );
   }
 }

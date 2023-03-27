@@ -10,14 +10,18 @@ class SettingsPage extends GetView<SettingsController> {
     return Scaffold(
       appBar: AppBar(),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            ElevatedButton(
-              onPressed: () => controller.signOutOnClicked(),
-              child: const Text("Sign Out"),
-            )
-          ],
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              ElevatedButton(
+                onPressed: () => controller.signOutOnClicked(),
+                child: const Text("Sign Out"),
+              )
+            ],
+          ),
         ),
       ),
     );

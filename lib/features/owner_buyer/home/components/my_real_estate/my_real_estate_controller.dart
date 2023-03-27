@@ -1,23 +1,30 @@
+import 'package:real_estate_mobile_app/models/api_response_list.dart';
+import 'package:real_estate_mobile_app/models/real_estate/real_estate_record_model.dart';
 import 'package:real_estate_mobile_app/utils/helpers/base_controller/base_controller.dart';
 
-class MyRealEstateController extends BaseController {
+class MyRealEstateController
+    extends BaseController<APIResponseList<RealEstateRecord>> {
   @override
-  Future<void> callAPI({int page = 1}) {
-    // TODO: implement callAPI
-    throw UnimplementedError();
+  void onInit() {
+    super.onInit();
+    refreshPage();
   }
 
   @override
   void loadNextPage() {
-    // TODO: implement loadNextPage
+    callAPI();
   }
 
   @override
   void refreshPage() {
-    // TODO: implement refreshPage
+    callAPI(page: super.page.value + 1);
   }
 
   @override
-  // TODO: implement statusData
-  get statusData => throw UnimplementedError();
+  Future<void> callAPI({int page = 1}) {
+    throw UnimplementedError();
+  }
+
+  @override
+  get statusData => List;
 }

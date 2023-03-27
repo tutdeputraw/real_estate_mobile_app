@@ -29,7 +29,8 @@ abstract class BaseController<T> extends GetxController {
 
   /// **Note:**
   /// loading with no data from the beginning
-  bool get isShimmering => isLoading && isEmptyData;
+  // bool get isShimmering => isLoading && isEmptyData;
+  bool get isShimmering => isLoading;
 
   bool get isEmptyData => isUsingList ? dataList.isEmpty : dataObj == null;
   bool get isSuccess => status.value == RefresherStatus.success;

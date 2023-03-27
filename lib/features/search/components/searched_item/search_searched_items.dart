@@ -15,7 +15,7 @@ class SearchSearchedItems extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetBuilder<SearchController>(builder: (controller) {
-      print('keupdate ${controller.dataObj?.message}');
+      print('keupdate ${controller.isShimmering}');
       return StateHandleWidget(
         loadingEnabled: controller.isShimmering,
         emptySubtitle: 'empty subtitle',

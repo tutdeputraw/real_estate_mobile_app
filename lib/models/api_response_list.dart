@@ -10,10 +10,13 @@ class APIResponseList<T> {
   });
 
   factory APIResponseList.fromJson(
-      Map<String, dynamic> json, Function fromJsonT) {
-    final items = List<T>.from(json['data'].map((item) => fromJsonT(item)));
+    Map<String, dynamic> json,
+    Function fromJsonT,
+  ) {
     return APIResponseList<T>(
-      data: items,
+      data: json['data'].length == 0
+          ? []
+          : List<T>.from(json['data'].map((item) => fromJsonT(item))),
       message: json['message'],
       success: json['success'],
     );
