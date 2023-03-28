@@ -1,7 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:real_estate_mobile_app/features/auth/auth/auth_controller.dart';
-import 'package:real_estate_mobile_app/models/user/user_record_model.dart';
 import 'package:real_estate_mobile_app/utils/helpers/network/retrofit/retrofit_api.dart';
 
 class SignInController extends GetxController {
@@ -28,7 +27,6 @@ class SignInController extends GetxController {
     print("RESPONE ${response.data.first.record.npwpNumber}");
 
     final user = response.data.first.record;
-
     user.msp = teMSP.text;
     user.organizationName = teOrg.text;
 

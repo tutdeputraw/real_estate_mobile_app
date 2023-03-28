@@ -17,9 +17,13 @@ class SettingsPage extends GetView<SettingsController> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               ElevatedButton(
+                onPressed: () => controller.userInfoOnClicked(),
+                child: const Text("User Info"),
+              ),
+              ElevatedButton(
                 onPressed: () => controller.signOutOnClicked(),
                 child: const Text("Sign Out"),
-              )
+              ),
             ],
           ),
         ),

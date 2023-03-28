@@ -12,7 +12,7 @@ class SignInPage extends StatelessWidget {
         child: Center(
           child: GetBuilder<SignInController>(builder: (controller) {
             return Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(24.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 mainAxisAlignment: MainAxisAlignment.center,

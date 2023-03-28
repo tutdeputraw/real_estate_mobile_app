@@ -1,15 +1,16 @@
 import 'package:get/get.dart';
 import 'package:real_estate_mobile_app/features/auth/sign_in/sign_in_binding.dart';
 import 'package:real_estate_mobile_app/features/auth/sign_in/sign_in_page.dart';
-import 'package:real_estate_mobile_app/features/broker/dashboard/broker_dashboard_binding.dart';
-import 'package:real_estate_mobile_app/features/external_advisor/dashboard/external_advisor_dashboard_binding.dart';
-import 'package:real_estate_mobile_app/features/owner_buyer/dashboard/owner_buyer_dashboard_binding.dart';
-import 'package:real_estate_mobile_app/features/owner_buyer/my_real_estate/owner_buyer_my_real_estate_binding.dart';
-import 'package:real_estate_mobile_app/features/owner_buyer/my_real_estate/owner_buyer_my_real_estate_page.dart';
-import 'package:real_estate_mobile_app/features/owner_buyer/real_estate_detail/owner_buyer_real_estate_detail_binding.dart';
-import 'package:real_estate_mobile_app/features/real_estate/detail/real_estate_detail_binding.dart';
 import 'package:real_estate_mobile_app/features/real_estate/detail/real_estate_detail_page.dart';
+import 'package:real_estate_mobile_app/features/roles/broker/dashboard/broker_dashboard_binding.dart';
+import 'package:real_estate_mobile_app/features/roles/external_advisor/dashboard/external_advisor_dashboard_binding.dart';
+import 'package:real_estate_mobile_app/features/roles/owner_buyer/dashboard/owner_buyer_dashboard_binding.dart';
+import 'package:real_estate_mobile_app/features/roles/owner_buyer/my_real_estate/owner_buyer_my_real_estate_binding.dart';
+import 'package:real_estate_mobile_app/features/roles/owner_buyer/my_real_estate/owner_buyer_my_real_estate_page.dart';
+import 'package:real_estate_mobile_app/features/roles/owner_buyer/real_estate_detail/owner_buyer_real_estate_detail_binding.dart';
 import 'package:real_estate_mobile_app/features/search/components/real_estate_detail/search_real_estate_detail_binding.dart';
+import 'package:real_estate_mobile_app/features/settings/components/user_info/user_info_binding.dart';
+import 'package:real_estate_mobile_app/features/settings/components/user_info/user_info_page.dart';
 import 'package:real_estate_mobile_app/features/settings/settings_binding.dart';
 import 'package:real_estate_mobile_app/features/settings/settings_page.dart';
 import 'package:real_estate_mobile_app/routes/page_names.dart';
@@ -19,11 +20,6 @@ import 'package:real_estate_mobile_app/utils/widgets/loading_page.dart';
 class PageRoutes {
   static final List<GetPage> pages = [
     GetPage(
-      name: PageNames.SETTINGS,
-      page: () => const SettingsPage(),
-      binding: SettingsBinding(),
-    ),
-    GetPage(
       name: PageNames.SIGN_IN,
       page: () => const SignInPage(),
       binding: SignInBinding(),
@@ -31,6 +27,18 @@ class PageRoutes {
     GetPage(
       name: PageNames.LOADING,
       page: () => const LoadingPage(),
+    ),
+
+    // settings
+    GetPage(
+      name: PageNames.SETTINGS,
+      page: () => const SettingsPage(),
+      binding: SettingsBinding(),
+    ),
+    GetPage(
+      name: PageNames.SETTINGS_USER_INFO,
+      page: () => const UserInfoPage(),
+      binding: UserInfoBinding(),
     ),
 
     // search

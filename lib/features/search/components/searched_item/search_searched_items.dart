@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:real_estate_mobile_app/features/search/components/searched_item/widgets/search_searched_item.dart';

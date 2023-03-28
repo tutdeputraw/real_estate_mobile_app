@@ -1,10 +1,12 @@
 // ignore_for_file: constant_identifier_names
 
 class PageNames {
-  static const SETTINGS = "/settings";
   static const LOADING = "/loading";
   static const SIGN_IN = "/sign-in";
-  // static const REAL_ESTATE_DETAIL = "/real-estate/detail";
+
+  // settings
+  static const SETTINGS = "/settings";
+  static const SETTINGS_USER_INFO = "/settings/user-info";
 
   // search
   static const SEARCH = "/search";

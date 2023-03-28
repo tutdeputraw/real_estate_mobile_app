@@ -4,6 +4,6 @@ import 'package:real_estate_mobile_app/features/real_estate/detail/components/re
 class RealEstateDetailInformationBinding extends Bindings {
   @override
   void dependencies() {
-    Get.put(RealEstateDetailInformationController());
+    // Get.put(RealEstateDetailInformationController());
   }
 }

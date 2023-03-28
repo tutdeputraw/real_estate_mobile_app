@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:real_estate_mobile_app/features/owner_buyer/home/widgets/owner_buyer_home_button.dart';
+import 'package:real_estate_mobile_app/features/roles/owner_buyer/home/widgets/owner_buyer_home_button.dart';
 import 'package:real_estate_mobile_app/routes/page_names.dart';
 
 class OwnerBuyerHomePage extends StatelessWidget {
