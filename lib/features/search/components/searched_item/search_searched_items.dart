@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:real_estate_mobile_app/features/search/components/searched_item/widgets/search_searched_item.dart';
@@ -16,7 +15,6 @@ class SearchSearchedItems extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetBuilder<SearchController>(builder: (controller) {
-      print('keupdate ${controller.isShimmering}');
       return StateHandleWidget(
         loadingEnabled: controller.isShimmering,
         emptySubtitle: 'empty subtitle',
@@ -36,7 +34,10 @@ class SearchSearchedItems extends StatelessWidget {
 
             final data = controller.dataObj!.data[i];
 
-            return SearchSearchedItem(data: data);
+            return SearchSearchedItem(
+              data: data,
+              onclicked: (id) => controller.itemOnClicked(id),
+            );
           },
         ),
       );

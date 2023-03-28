@@ -8,7 +8,6 @@ import 'package:real_estate_mobile_app/features/roles/owner_buyer/dashboard/owne
 import 'package:real_estate_mobile_app/features/roles/owner_buyer/my_real_estate/owner_buyer_my_real_estate_binding.dart';
 import 'package:real_estate_mobile_app/features/roles/owner_buyer/my_real_estate/owner_buyer_my_real_estate_page.dart';
 import 'package:real_estate_mobile_app/features/roles/owner_buyer/real_estate_detail/owner_buyer_real_estate_detail_binding.dart';
-import 'package:real_estate_mobile_app/features/search/components/real_estate_detail/search_real_estate_detail_binding.dart';
 import 'package:real_estate_mobile_app/features/settings/components/user_info/user_info_binding.dart';
 import 'package:real_estate_mobile_app/features/settings/components/user_info/user_info_page.dart';
 import 'package:real_estate_mobile_app/features/settings/settings_binding.dart';
@@ -39,13 +38,6 @@ class PageRoutes {
       name: PageNames.SETTINGS_USER_INFO,
       page: () => const UserInfoPage(),
       binding: UserInfoBinding(),
-    ),
-
-    // search
-    GetPage(
-      name: PageNames.SEARCH_REAL_ESTATE_DETAIL,
-      page: () => const RealEstateDetailPage(),
-      binding: SearchRealEstateDetailBinding(),
     ),
 
     // owner buyer
