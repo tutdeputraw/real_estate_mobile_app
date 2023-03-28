@@ -30,21 +30,20 @@
 // }
 
 class APIResponseObject<T> {
-  final T data;
+  T? data;
   final String message;
   final bool success;
 
   APIResponseObject({
-    required this.data,
+    this.data,
     required this.message,
     required this.success,
   });
 
   factory APIResponseObject.fromJson(
       Map<String, dynamic> json, Function fromJsonT) {
-    final item = fromJsonT(json['data']);
     return APIResponseObject<T>(
-      data: item,
+      data: json['data'] != null ? fromJsonT(json['data']) : null,
       message: json['message'],
       success: json['success'],
     );

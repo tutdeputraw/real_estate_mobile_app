@@ -8,6 +8,8 @@ import 'package:real_estate_mobile_app/features/roles/owner_buyer/dashboard/owne
 import 'package:real_estate_mobile_app/features/roles/owner_buyer/my_real_estate/owner_buyer_my_real_estate_binding.dart';
 import 'package:real_estate_mobile_app/features/roles/owner_buyer/my_real_estate/owner_buyer_my_real_estate_page.dart';
 import 'package:real_estate_mobile_app/features/roles/owner_buyer/real_estate_detail/owner_buyer_real_estate_detail_binding.dart';
+import 'package:real_estate_mobile_app/features/roles/owner_buyer/real_estate_sales_detail/owner_buyer_real_estate_sales_detail_binding.dart';
+import 'package:real_estate_mobile_app/features/roles/owner_buyer/real_estate_sales_detail/owner_buyer_real_estate_sales_detail_page.dart';
 import 'package:real_estate_mobile_app/features/settings/components/user_info/user_info_binding.dart';
 import 'package:real_estate_mobile_app/features/settings/components/user_info/user_info_page.dart';
 import 'package:real_estate_mobile_app/features/settings/settings_binding.dart';
@@ -55,6 +57,11 @@ class PageRoutes {
       name: PageNames.OWNER_BUYER_REAL_ESTATE_DETAIL,
       page: () => const RealEstateDetailPage(),
       binding: OwnerBuyerRealEstateDetailBinding(),
+    ),
+    GetPage(
+      name: PageNames.OWNER_BUYER_REAL_ESTATE_SALES_DETAIL,
+      page: () => const OwnerBuyerRealEstateSalesDetailPage(),
+      binding: OwnerBuyerRealEstateSalesDetailBinding(),
     ),
 
     // external advisor

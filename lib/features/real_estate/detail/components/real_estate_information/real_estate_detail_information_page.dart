@@ -21,7 +21,7 @@ class RealEstateDetailInformationPage extends StatelessWidget {
           },
           body: controller.dataObj != null
               ? RealEstateDetailInformationComponent(
-                  data: controller.dataObj!.data,
+                  data: controller.dataObj!.data!,
                 )
               : const SizedBox(),
         );

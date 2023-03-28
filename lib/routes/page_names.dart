@@ -19,6 +19,8 @@ class PageNames {
       "/owner-buyer/home/my-real-estate";
   static const OWNER_BUYER_REAL_ESTATE_DETAIL =
       "/owner-buyer/real-estate/detail";
+  static const OWNER_BUYER_REAL_ESTATE_SALES_DETAIL =
+      "/owner-buyer/real-estate/sales/detail";
 
   // external advisor
   static const EXTERNAL_ADVISOR_DASHBOARD = "/external-advisor/dashboard";

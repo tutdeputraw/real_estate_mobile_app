@@ -30,12 +30,9 @@ class RealEstateDetailInformationController
   @override
   Future<void> callAPI({int page = 1}) async {
     final authController = Get.find<AuthController>();
-    // final realEstateDetailController = Get.find<RealEstateDetailController>();
     final user = authController.user!;
 
     loadingState();
-    // print(
-    //     'AJAAJ ${user.organizationName}\t${user.msp}\t${realEstateDetailController.id}\t');
     final response = await RetrofitAPI.getRealEstateById(
       orgname: user.organizationName!,
       userMSP: user.msp!,

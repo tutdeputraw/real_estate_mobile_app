@@ -3,51 +3,60 @@ import 'package:get/get.dart';
 import 'package:real_estate_mobile_app/features/auth/auth/auth_controller.dart';
 import 'package:real_estate_mobile_app/features/real_estate/detail/components/real_estate_information/real_estate_detail_information_controller.dart';
 import 'package:real_estate_mobile_app/features/real_estate/detail/real_estate_detail_controller.dart';
+import 'package:real_estate_mobile_app/features/roles/owner_buyer/real_estate_detail/components/buy_real_estate/owner_buyer_buy_real_estate_page.dart';
+import 'package:real_estate_mobile_app/features/roles/owner_buyer/real_estate_detail/components/check_sales_progress/owner_buyer_check_sales_progress_page.dart';
+import 'package:real_estate_mobile_app/features/roles/owner_buyer/real_estate_detail/components/sell_real_estate/owner_buyer_sell_real_estate_page.dart';
 
 class OwnerBuyerRealEstateDetailController extends RealEstateDetailController {
+  final authController = Get.find<AuthController>();
+  late RealEstateDetailInformationController
+      _realEstateDetailInformationController;
+
   @override
   Widget showActionButton() {
-    final authController = Get.find<AuthController>();
     return GetBuilder<RealEstateDetailInformationController>(
       builder: (realEstateInformationController) {
         if (realEstateInformationController.isShimmering) {
           return const SizedBox();
         }
 
-        final ownerIdA = authController.user?.id;
-        final ownerIdB = realEstateInformationController.dataObj?.data.ownerId;
+        _realEstateDetailInformationController =
+            realEstateInformationController;
 
-        if (ownerIdA == ownerIdB) {
-          final data = realEstateInformationController.dataObj!.data;
-
-          if (data.isOpenToSell.toLowerCase() == 'true') {
-            return ElevatedButton(
-              onPressed: () {},
-              child: const Text("check real estate progress"),
-            );
-          } else {
-            return ElevatedButton(
-              onPressed: () {},
-              child: const Text("sell real estate"),
-            );
-          }
+        if (_isSeller) {
+          return showActionButtonForSeller();
+        } else {
+          return showActionButtonForBuyer();
         }
-
-        return ElevatedButton(
-          onPressed: _isOpenToSell(realEstateInformationController)
-              ? buyRealEstateOnClicked
-              : null,
-          child: const Text("buy"),
-        );
       },
     );
   }
 
-  bool _isOpenToSell(RealEstateDetailInformationController controller) {
-    return controller.dataObj?.data.isOpenToSell.toLowerCase() == 'true';
+  Widget showActionButtonForBuyer() {
+    if (_isOpenToSell) {
+      return OwnerBuyerBuyRealEstatePage(id: _realEstateId);
+    } else {
+      return const ElevatedButton(onPressed: null, child: Text('Cannot Buy'));
+    }
   }
 
-  void buyRealEstateOnClicked() {
-    print('buy real estate clicked');
+  Widget showActionButtonForSeller() {
+    if (_isOpenToSell) {
+      return OwnerBuyerCheckSalesProgressPage(id: _realEstateId);
+    } else {
+      return OwnerBuyerSellRealEstatePage(id: _realEstateId);
+    }
   }
+
+  bool get _isOpenToSell =>
+      _realEstateDetailInformationController.dataObj!.data!.isOpenToSell
+          .toLowerCase() ==
+      'true';
+
+  bool get _isSeller =>
+      authController.user?.id ==
+      _realEstateDetailInformationController.dataObj?.data!.ownerId;
+
+  String get _realEstateId =>
+      _realEstateDetailInformationController.dataObj!.data!.id;
 }
