@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:real_estate_mobile_app/features/real_estate/detail/components/real_estate_history/real_estate_detail_history_page.dart';
 import 'package:real_estate_mobile_app/features/real_estate/detail/components/real_estate_information/real_estate_detail_information_page.dart';
+import 'package:real_estate_mobile_app/features/real_estate/detail/real_estate_detail_controller.dart';
 
 class RealEstateDetailPage extends StatelessWidget {
   const RealEstateDetailPage({super.key});
@@ -17,10 +19,19 @@ class RealEstateDetailPage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
+              const Text(
+                "Real Estate Information",
+                textAlign: TextAlign.center,
+              ),
+              const SizedBox(height: 8),
               const RealEstateDetailInformationPage(),
-              ElevatedButton(
-                onPressed: () {},
-                child: const Text("sell real estate"),
+              GetBuilder<RealEstateDetailController>(builder: (controller) {
+                return controller.showActionButton();
+              }),
+              const SizedBox(height: 8),
+              const Text(
+                "Real Estate History",
+                textAlign: TextAlign.center,
               ),
               const RealEstateDetailHistoryPage(),
             ],

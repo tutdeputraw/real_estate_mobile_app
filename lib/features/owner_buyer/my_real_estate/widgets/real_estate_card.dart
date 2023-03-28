@@ -17,7 +17,10 @@ class MyRealEstateCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       onTap: () {
-        Get.toNamed(PageNames.REAL_ESTATE_DETAIL, arguments: data.id);
+        Get.toNamed(
+          PageNames.OWNER_BUYER_REAL_ESTATE_DETAIL,
+          arguments: data.id,
+        );
       },
       title: Text('Real Estate-${data.id} ${data.city}'),
     );

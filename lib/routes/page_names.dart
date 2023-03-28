@@ -2,18 +2,21 @@
 
 class PageNames {
   static const SETTINGS = "/settings";
-  static const SEARCH = "/search";
   static const LOADING = "/loading";
   static const SIGN_IN = "/sign-in";
-  static const REAL_ESTATE_DETAIL = "/real-estate/detail";
+  // static const REAL_ESTATE_DETAIL = "/real-estate/detail";
+
+  // search
+  static const SEARCH = "/search";
+  static const SEARCH_REAL_ESTATE_DETAIL = "/search/real-estate/detail";
 
   // owner buyer
   static const OWNER_BUYER_DASHBOARD = "/owner-buyer/dashboard";
   static const OWNER_BUYER_HOME = "/owner-buyer/home";
   static const OWNER_BUYER_HOME_MY_REAL_ESTATE =
       "/owner-buyer/home/my-real-estate";
-  // static const OWNER_BUYER_REAL_ESTATE_DETAIL =
-  //     "/owner-buyer/real-estate/detail";
+  static const OWNER_BUYER_REAL_ESTATE_DETAIL =
+      "/owner-buyer/real-estate/detail";
 
   // external advisor
   static const EXTERNAL_ADVISOR_DASHBOARD = "/external-advisor/dashboard";

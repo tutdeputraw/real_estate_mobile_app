@@ -4,10 +4,12 @@ import 'package:real_estate_mobile_app/features/auth/sign_in/sign_in_page.dart';
 import 'package:real_estate_mobile_app/features/broker/dashboard/broker_dashboard_binding.dart';
 import 'package:real_estate_mobile_app/features/external_advisor/dashboard/external_advisor_dashboard_binding.dart';
 import 'package:real_estate_mobile_app/features/owner_buyer/dashboard/owner_buyer_dashboard_binding.dart';
-import 'package:real_estate_mobile_app/features/owner_buyer/my_real_estate/my_real_estate_binding.dart';
-import 'package:real_estate_mobile_app/features/owner_buyer/my_real_estate/my_real_estate_page.dart';
+import 'package:real_estate_mobile_app/features/owner_buyer/my_real_estate/owner_buyer_my_real_estate_binding.dart';
+import 'package:real_estate_mobile_app/features/owner_buyer/my_real_estate/owner_buyer_my_real_estate_page.dart';
+import 'package:real_estate_mobile_app/features/owner_buyer/real_estate_detail/owner_buyer_real_estate_detail_binding.dart';
 import 'package:real_estate_mobile_app/features/real_estate/detail/real_estate_detail_binding.dart';
 import 'package:real_estate_mobile_app/features/real_estate/detail/real_estate_detail_page.dart';
+import 'package:real_estate_mobile_app/features/search/components/real_estate_detail/search_real_estate_detail_binding.dart';
 import 'package:real_estate_mobile_app/features/settings/settings_binding.dart';
 import 'package:real_estate_mobile_app/features/settings/settings_page.dart';
 import 'package:real_estate_mobile_app/routes/page_names.dart';
@@ -30,10 +32,12 @@ class PageRoutes {
       name: PageNames.LOADING,
       page: () => const LoadingPage(),
     ),
+
+    // search
     GetPage(
-      name: PageNames.REAL_ESTATE_DETAIL,
+      name: PageNames.SEARCH_REAL_ESTATE_DETAIL,
       page: () => const RealEstateDetailPage(),
-      binding: RealEstateDetailBinding(),
+      binding: SearchRealEstateDetailBinding(),
     ),
 
     // owner buyer
@@ -46,6 +50,11 @@ class PageRoutes {
       name: PageNames.OWNER_BUYER_HOME_MY_REAL_ESTATE,
       page: () => const MyRealEstatePage(),
       binding: MyRealEstateBinding(),
+    ),
+    GetPage(
+      name: PageNames.OWNER_BUYER_REAL_ESTATE_DETAIL,
+      page: () => const RealEstateDetailPage(),
+      binding: OwnerBuyerRealEstateDetailBinding(),
     ),
 
     // external advisor

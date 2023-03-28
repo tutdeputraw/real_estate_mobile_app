@@ -20,14 +20,8 @@ class RealEstateDetailInformationPage extends StatelessWidget {
             controller.refreshPage();
           },
           body: controller.dataObj != null
-              ? Column(
-                  children: [
-                    const Text("Real Estate Information"),
-                    const SizedBox(height: 8),
-                    RealEstateDetailInformationComponent(
-                      data: controller.dataObj!.data,
-                    ),
-                  ],
+              ? RealEstateDetailInformationComponent(
+                  data: controller.dataObj!.data,
                 )
               : const SizedBox(),
         );
