@@ -1,4 +1,5 @@
 import 'package:flutter/widgets.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 import 'package:real_estate_mobile_app/features/auth/auth/auth_controller.dart';
 import 'package:real_estate_mobile_app/utils/helpers/network/retrofit/retrofit_api.dart';
@@ -12,6 +13,8 @@ class SignInController extends GetxController {
   void onSubmit() async {
     print('kesubmit');
     String token = 'token-dummy';
+
+    EasyLoading.show();
 
     final response = await RetrofitAPI.getUserByEmailAndName(
       email: teEmail.text,
@@ -38,5 +41,6 @@ class SignInController extends GetxController {
 
     AuthController authController = Get.find<AuthController>();
     await authController.saveAuthData(user: user, token: token);
+    EasyLoading.dismiss();
   }
 }

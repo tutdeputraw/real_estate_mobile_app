@@ -31,19 +31,19 @@ class RealEstateRecord {
 
   factory RealEstateRecord.fromJson(Map<String, dynamic> json) {
     return RealEstateRecord(
-      acreLot: json['acre_lot'],
-      bath: json['bath'],
-      bed: json['bed'],
-      city: json['city'],
-      fullAddress: json['full_address'],
-      houseSize: json['house_size'],
-      id: json['id'],
-      isOpenToSell: json['is_open_to_sell'],
-      ownerId: json['owner_id'],
-      price: json['price'],
-      state: json['state'],
-      street: json['street'],
-      zipCode: json['zip_code'],
+      acreLot: json['realEstateModel_acre_lot'],
+      bath: json['realEstateModel_bath'],
+      bed: json['realEstateModel_bed'],
+      city: json['realEstateModel_city'],
+      fullAddress: json['realEstateModel_full_address'],
+      houseSize: json['realEstateModel_house_size'],
+      id: json['realEstateModel_id'],
+      isOpenToSell: json['realEstateModel_is_open_to_sell'],
+      ownerId: json['realEstateModel_owner_id'],
+      price: json['realEstateModel_price'],
+      state: json['realEstateModel_state'],
+      street: json['realEstateModel_street'],
+      zipCode: json['realEstateModel_zip_code'],
     );
   }
 }

@@ -3,9 +3,9 @@ import 'package:get/get.dart';
 import 'package:real_estate_mobile_app/features/auth/auth/auth_controller.dart';
 import 'package:real_estate_mobile_app/features/real_estate/detail/components/real_estate_information/real_estate_detail_information_controller.dart';
 import 'package:real_estate_mobile_app/features/real_estate/detail/real_estate_detail_controller.dart';
-import 'package:real_estate_mobile_app/features/roles/owner_buyer/real_estate_detail/components/buy_real_estate/owner_buyer_buy_real_estate_page.dart';
-import 'package:real_estate_mobile_app/features/roles/owner_buyer/real_estate_detail/components/check_sales_progress/owner_buyer_check_sales_progress_page.dart';
-import 'package:real_estate_mobile_app/features/roles/owner_buyer/real_estate_detail/components/sell_real_estate/owner_buyer_sell_real_estate_page.dart';
+import 'package:real_estate_mobile_app/features/roles/owner_buyer/real_estate_detail/components/buy_real_estate/owner_buyer_buy_real_estate_component.dart';
+import 'package:real_estate_mobile_app/features/roles/owner_buyer/real_estate_detail/components/check_sales_progress/owner_buyer_check_sales_progress_component.dart';
+import 'package:real_estate_mobile_app/features/roles/owner_buyer/real_estate_detail/components/sell_real_estate/owner_buyer_sell_real_estate_component.dart';
 
 class OwnerBuyerRealEstateDetailController extends RealEstateDetailController {
   final authController = Get.find<AuthController>();
@@ -34,7 +34,7 @@ class OwnerBuyerRealEstateDetailController extends RealEstateDetailController {
 
   Widget showActionButtonForBuyer() {
     if (_isOpenToSell) {
-      return OwnerBuyerBuyRealEstatePage(id: _realEstateId);
+      return OwnerBuyerBuyRealEstateComponent(id: _realEstateId);
     } else {
       return const ElevatedButton(onPressed: null, child: Text('Cannot Buy'));
     }
@@ -42,9 +42,9 @@ class OwnerBuyerRealEstateDetailController extends RealEstateDetailController {
 
   Widget showActionButtonForSeller() {
     if (_isOpenToSell) {
-      return OwnerBuyerCheckSalesProgressPage(id: _realEstateId);
+      return OwnerBuyerCheckSalesProgressComponent(id: _realEstateId);
     } else {
-      return OwnerBuyerSellRealEstatePage(id: _realEstateId);
+      return OwnerBuyerSellRealEstateComponent(id: _realEstateId);
     }
   }
 

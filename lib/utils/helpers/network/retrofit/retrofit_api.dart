@@ -17,7 +17,7 @@ class RetrofitAPI {
       queryParams: {
         "organizationName": orgName,
         "userMSP": userMSP,
-        "fieldSearch": "city",
+        "fieldSearch": "realEstateModel_city",
         "keywordSearch": keywordSearch
       },
       converter: (json) => APIResponseList<RealEstate>.fromJson(
@@ -126,6 +126,28 @@ class RetrofitAPI {
         'userMSP': userMSP,
         'realEstateId': realEstateId,
         'status': status,
+      },
+      converter: (json) => APIResponseObject.fromJson(
+        json,
+        (itemJson) {},
+      ),
+    );
+    return response;
+  }
+
+  static Future<APIResponseObject?> changeRealEstateOwner({
+    required String orgname,
+    required String userMSP,
+    required String realEstateId,
+    required String newOwnerId,
+  }) async {
+    final response = await RetrofitHelper.post<APIResponseObject>(
+      path: '/realEstate/ChangeRealEstateOwner',
+      body: {
+        'organizationName': orgname,
+        'userMSP': userMSP,
+        'realEstateId': realEstateId,
+        'newOwnerId': newOwnerId,
       },
       converter: (json) => APIResponseObject.fromJson(
         json,

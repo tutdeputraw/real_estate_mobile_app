@@ -20,11 +20,11 @@ class UserRecord {
   factory UserRecord.fromJson(Map<String, dynamic> json) {
     return UserRecord(
       organizationName: json['organization_name'],
-      name: json['name'],
-      email: json['email'],
-      id: json['id'],
-      npwpNumber: json['npwp_number'],
-      phoneNumber: json['phone_number'],
+      name: json['userModel_name'],
+      email: json['userModel_email'],
+      id: json['userModel_id'],
+      npwpNumber: json['userModel_npwp_number'],
+      phoneNumber: json['userModel_phone_number'],
       msp: json['msp'],
     );
   }
@@ -32,11 +32,11 @@ class UserRecord {
   Map<String, dynamic> toJson() {
     return {
       "organization_name": organizationName,
-      "name": name,
-      "email": email,
-      "id": id,
-      "npwp_number": npwpNumber,
-      "phone_number": phoneNumber,
+      "userModel_name": name,
+      "userModel_email": email,
+      "userModel_id": id,
+      "userModel_npwp_number": npwpNumber,
+      "userModel_phone_number": phoneNumber,
       'msp': msp,
     };
   }

@@ -1,10 +1,10 @@
 import 'package:get/get.dart';
 import 'package:real_estate_mobile_app/routes/page_names.dart';
 
-class OwnerBuyerCheckSalesProgressController extends GetxController {
+class OwnerBuyerCheckSalesProgressComponentController extends GetxController {
   final String realEstateId;
 
-  OwnerBuyerCheckSalesProgressController({required this.realEstateId});
+  OwnerBuyerCheckSalesProgressComponentController({required this.realEstateId});
 
   void checkSalesProgress() {
     Get.toNamed(
