@@ -1,15 +1,14 @@
 import 'package:get/get.dart';
 import 'package:real_estate_mobile_app/features/auth/auth/auth_controller.dart';
-import 'package:real_estate_mobile_app/models/real_estate_history/real_estate_history_model.dart';
+import 'package:real_estate_mobile_app/models/api_response_list.dart';
+import 'package:real_estate_mobile_app/models/real_estate/real_estate_model.dart';
+import 'package:real_estate_mobile_app/models/real_estate/real_estate_record_model.dart';
+import 'package:real_estate_mobile_app/routes/page_names.dart';
 import 'package:real_estate_mobile_app/utils/helpers/base_controller/base_controller.dart';
 import 'package:real_estate_mobile_app/utils/helpers/network/retrofit/retrofit_api.dart';
 
-class RealEstateDetailHistoryController
-    extends BaseController<RealEstateHistory> {
-  final String realEstateId;
-
-  RealEstateDetailHistoryController({required this.realEstateId});
-
+class BrokerListRealEstateOpenToSellController
+    extends BaseController<APIResponseList<RealEstate>> {
   @override
   void onInit() {
     super.onInit();
@@ -22,32 +21,38 @@ class RealEstateDetailHistoryController
   }
 
   @override
-  void refreshPage() {
-    callAPI();
+  void refreshPage() async {
+    await callAPI();
   }
 
   @override
   Future<void> callAPI({int page = 1}) async {
     final authController = Get.find<AuthController>();
-
     final user = authController.user!;
 
     loadingState();
-    print('AJAAJ ${user.organizationName}\t${user.msp}\t');
-    final response = await RetrofitAPI.getRealEstateHistory(
+    final response = await RetrofitAPI.getRealEstateByOpenToSell(
       orgname: user.organizationName!,
       userMSP: user.msp!,
-      realEstateId: realEstateId,
     );
 
+    print('masok sini!!!222');
+
     if (response != null && response.success) {
-      finishLoadData(list: response.data);
+      finishLoadData(data: response);
       print('berhasil ${response.message}');
     } else {
-      print("ERRORBBB: ${response?.message}");
+      print("ERRORAAA: ${response?.message}");
     }
   }
 
   @override
   get statusData => List;
+
+  void cardOnTap(RealEstateRecord data) {
+    Get.toNamed(
+      PageNames.BROKER_REAL_ESTATE_DETAIL,
+      arguments: data.id,
+    );
+  }
 }

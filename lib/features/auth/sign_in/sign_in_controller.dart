@@ -2,7 +2,9 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 import 'package:real_estate_mobile_app/features/auth/auth/auth_controller.dart';
+import 'package:real_estate_mobile_app/utils/helpers/network/retrofit/config.dart';
 import 'package:real_estate_mobile_app/utils/helpers/network/retrofit/retrofit_api.dart';
+import 'package:real_estate_mobile_app/utils/helpers/network/retrofit/retrofit_helper.dart';
 
 class SignInController extends GetxController {
   TextEditingController teOrg = TextEditingController();
@@ -15,6 +17,10 @@ class SignInController extends GetxController {
     String token = 'token-dummy';
 
     EasyLoading.show();
+
+    RetrofitConfig.defineApiURL(teOrg.text);
+
+    print('URLRUL ${RetrofitHelper.baseUrl}');
 
     final response = await RetrofitAPI.getUserByEmailAndName(
       email: teEmail.text,

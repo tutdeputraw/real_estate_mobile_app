@@ -7,9 +7,9 @@ import 'package:real_estate_mobile_app/utils/helpers/network/retrofit/retrofit_a
 
 class RealEstateDetailInformationController
     extends BaseController<APIResponseObject<RealEstateRecord>> {
-  final String id;
+  final String realEstateId;
 
-  RealEstateDetailInformationController({required this.id});
+  RealEstateDetailInformationController({required this.realEstateId});
 
   @override
   void onInit() {
@@ -36,7 +36,7 @@ class RealEstateDetailInformationController
     final response = await RetrofitAPI.getRealEstateById(
       orgname: user.organizationName!,
       userMSP: user.msp!,
-      realEstateId: id,
+      realEstateId: realEstateId,
     );
 
     if (response != null && response.success) {

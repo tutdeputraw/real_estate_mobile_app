@@ -6,6 +6,7 @@ import 'package:real_estate_mobile_app/models/real_estate/real_estate_model.dart
 import 'package:real_estate_mobile_app/models/user/user_record_model.dart';
 import 'package:real_estate_mobile_app/utils/helpers/base_controller/base_controller.dart';
 import 'package:real_estate_mobile_app/utils/helpers/network/retrofit/retrofit_api.dart';
+import 'package:real_estate_mobile_app/utils/helpers/network/retrofit/retrofit_helper.dart';
 
 abstract class SearchController
     extends BaseController<APIResponseList<RealEstate>> {
@@ -31,6 +32,7 @@ abstract class SearchController
     }
 
     loadingState();
+    print('IKIAAAS ${RetrofitHelper.baseUrl}');
     final response = await RetrofitAPI.searchRealEstateByPlace(
       orgName: user.organizationName ?? "Org1",
       userMSP: user.msp!,

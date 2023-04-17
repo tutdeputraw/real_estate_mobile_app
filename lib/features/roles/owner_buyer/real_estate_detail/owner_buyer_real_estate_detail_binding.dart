@@ -12,7 +12,7 @@ class OwnerBuyerRealEstateDetailBinding extends Bindings {
     );
     final realEstateId = realEstateDetailController.id;
 
-    Get.put(RealEstateDetailInformationController(id: realEstateId));
-    Get.put(RealEstateDetailHistoryController());
+    Get.put(RealEstateDetailInformationController(realEstateId: realEstateId));
+    Get.put(RealEstateDetailHistoryController(realEstateId: realEstateId));
   }
 }

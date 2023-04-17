@@ -1,27 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:real_estate_mobile_app/models/real_estate/real_estate_record_model.dart';
-import 'package:real_estate_mobile_app/routes/page_names.dart';
 
-class MyRealEstateCard extends StatelessWidget {
+class RealEstateCard extends StatelessWidget {
   final RealEstateRecord data;
-  final int index;
+  final Function onTap;
 
-  const MyRealEstateCard({
+  const RealEstateCard({
     super.key,
     required this.data,
-    required this.index,
+    required this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      onTap: () {
-        Get.toNamed(
-          PageNames.OWNER_BUYER_REAL_ESTATE_DETAIL,
-          arguments: data.id,
-        );
-      },
+      onTap: () => onTap(),
       title: Text('Real Estate-${data.id} ${data.city}'),
     );
   }

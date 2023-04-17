@@ -2,6 +2,8 @@ import 'package:get/get.dart';
 import 'package:real_estate_mobile_app/features/auth/auth/auth_state.dart';
 import 'package:real_estate_mobile_app/models/user/user_record_model.dart';
 import 'package:real_estate_mobile_app/routes/page_names.dart';
+import 'package:real_estate_mobile_app/utils/helpers/network/retrofit/config.dart';
+import 'package:real_estate_mobile_app/utils/helpers/network/retrofit/retrofit_helper.dart';
 import 'package:real_estate_mobile_app/utils/helpers/secure_storage/secure_storage_helper.dart';
 import 'package:real_estate_mobile_app/utils/helpers/storage/storage_constants.dart';
 import 'package:real_estate_mobile_app/utils/helpers/storage/storage_helper.dart';
@@ -50,7 +52,19 @@ class AuthController extends GetxController {
   }
 
   void _authenticatedUser() {
-    Get.offAllNamed(PageNames.OWNER_BUYER_DASHBOARD);
+    final userRecord = user;
+
+    RetrofitConfig.defineApiURL(user!.organizationName!);
+
+    if (userRecord?.organizationName?.toLowerCase() == "org1") {
+      Get.offAllNamed(PageNames.OWNER_BUYER_DASHBOARD);
+    } else if (userRecord?.organizationName?.toLowerCase() == "org2") {
+      Get.offAllNamed(PageNames.BROKER_DASHBOARD);
+    } else if (userRecord?.organizationName?.toLowerCase() == "org3") {
+      Get.offAllNamed(PageNames.EXTERNAL_ADVISOR_DASHBOARD);
+    }
+    print("URLURL ${RetrofitHelper.baseUrl}");
+
     // if (user?.role == UserRole.BUYER_OWNER) {
     //   Get.offAllNamed(PageNames.OWNER_BUYER_DASHBOARD);
     // } else if (user?.role == UserRole.BROKER) {

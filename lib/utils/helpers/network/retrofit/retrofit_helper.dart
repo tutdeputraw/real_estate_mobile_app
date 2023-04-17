@@ -3,7 +3,7 @@ import 'package:http/http.dart' as http;
 import 'package:real_estate_mobile_app/utils/helpers/print_json.dart';
 
 class RetrofitHelper {
-  static const String baseUrl = 'http://34.125.9.20:4000/api';
+  static String baseUrl = "";
 
   static Future<T?> get<T>({
     required String path,

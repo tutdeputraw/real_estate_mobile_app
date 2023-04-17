@@ -3,6 +3,7 @@ import 'package:real_estate_mobile_app/models/api_response_object.dart';
 import 'package:real_estate_mobile_app/models/real_estate/real_estate_model.dart';
 import 'package:real_estate_mobile_app/models/real_estate/real_estate_record_model.dart';
 import 'package:real_estate_mobile_app/models/real_estate_history/real_estate_history_model.dart';
+import 'package:real_estate_mobile_app/models/real_estate_sales_record/real_estate_sales_record_model.dart';
 import 'package:real_estate_mobile_app/models/user/user_model.dart';
 import 'package:real_estate_mobile_app/utils/helpers/network/retrofit/retrofit_helper.dart';
 
@@ -87,6 +88,66 @@ class RetrofitAPI {
       converter: (json) => APIResponseObject<RealEstateRecord>.fromJson(
         json,
         (itemJson) => RealEstateRecord.fromJson(itemJson),
+      ),
+    );
+    return response;
+  }
+
+  static Future<APIResponseList<RealEstate>?> getRealEstateByOpenToSell({
+    required String orgname,
+    required String userMSP,
+  }) async {
+    final response = await RetrofitHelper.get<APIResponseList<RealEstate>>(
+      path: '/realEstate/getByOpenToSell',
+      queryParams: {
+        "organizationName": orgname,
+        "userMSP": userMSP,
+      },
+      converter: (json) => APIResponseList<RealEstate>.fromJson(
+        json,
+        (itemJson) => RealEstate.fromJson(itemJson),
+      ),
+    );
+    return response;
+  }
+
+  static Future<APIResponseList<RealEstate>?> getRealEstateByOpenToSellDetail({
+    required String orgname,
+    required String userMSP,
+    required String realEstateId,
+  }) async {
+    final response = await RetrofitHelper.get<APIResponseList<RealEstate>>(
+      path: '/realEstate/getByOpenToSell/detail',
+      queryParams: {
+        "organizationName": orgname,
+        "userMSP": userMSP,
+        "realEstateId": realEstateId,
+      },
+      converter: (json) => APIResponseList<RealEstate>.fromJson(
+        json,
+        (itemJson) => RealEstate.fromJson(itemJson),
+      ),
+    );
+    return response;
+  }
+
+  static Future<APIResponseList<RealEstateSalesRecordModel>?>
+      getRealEstateSalesRecordByRealEstate({
+    required String orgname,
+    required String userMSP,
+    required String realEstateId,
+  }) async {
+    final response =
+        await RetrofitHelper.get<APIResponseList<RealEstateSalesRecordModel>>(
+      path: '/realEstate/salesRecord/getByRealEstateId',
+      queryParams: {
+        "organizationName": orgname,
+        "userMSP": userMSP,
+        "realEstateId": realEstateId,
+      },
+      converter: (json) => APIResponseList<RealEstateSalesRecordModel>.fromJson(
+        json,
+        (itemJson) => RealEstateSalesRecordModel.fromJson(itemJson),
       ),
     );
     return response;

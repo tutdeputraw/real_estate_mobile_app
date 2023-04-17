@@ -5,10 +5,15 @@ import 'package:get_storage/get_storage.dart';
 import 'package:real_estate_mobile_app/features/auth/auth/auth_binding.dart';
 import 'package:real_estate_mobile_app/routes/page_names.dart';
 import 'package:real_estate_mobile_app/routes/page_routes.dart';
+import 'package:real_estate_mobile_app/utils/helpers/network/retrofit/retrofit_helper.dart';
 
 void main() async {
   AuthBinding().dependencies();
   await GetStorage.init();
+
+  RetrofitHelper.baseUrl = "test";
+  print("JAJA1: ${RetrofitHelper.baseUrl}");
+  print("JAJA2: ${RetrofitHelper.baseUrl}");
 
   runApp(const MyApp());
 }

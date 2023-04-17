@@ -30,4 +30,7 @@ class PageNames {
   // broker
   static const BROKER_DASHBOARD = "/broker/dashboard";
   static const BROKER_BUYER_HOME = "/broker/home";
+  static const BROKER_REAL_ESTATE_DETAIL = "/broker/real-estate-detail";
+  static const BROKER_REAL_ESTATE_OPEN_TO_SELL =
+      "/broker/real-estate/open-to-sell";
 }

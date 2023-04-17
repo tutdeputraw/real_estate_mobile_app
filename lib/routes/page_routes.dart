@@ -3,6 +3,10 @@ import 'package:real_estate_mobile_app/features/auth/sign_in/sign_in_binding.dar
 import 'package:real_estate_mobile_app/features/auth/sign_in/sign_in_page.dart';
 import 'package:real_estate_mobile_app/features/real_estate/detail/real_estate_detail_page.dart';
 import 'package:real_estate_mobile_app/features/roles/broker/dashboard/broker_dashboard_binding.dart';
+import 'package:real_estate_mobile_app/features/roles/broker/list_real_estate_open_to_sell/broker_list_real_estate_open_to_sell_binding.dart';
+import 'package:real_estate_mobile_app/features/roles/broker/list_real_estate_open_to_sell/broker_list_real_estate_open_to_sell_page.dart';
+import 'package:real_estate_mobile_app/features/roles/broker/real_estate_detail/broker_real_estate_detail_binding.dart';
+import 'package:real_estate_mobile_app/features/roles/broker/real_estate_detail/broker_real_estate_detail_page.dart';
 import 'package:real_estate_mobile_app/features/roles/external_advisor/dashboard/external_advisor_dashboard_binding.dart';
 import 'package:real_estate_mobile_app/features/roles/owner_buyer/buy_real_estate/owner_buyer_buy_real_estate_binding.dart';
 import 'package:real_estate_mobile_app/features/roles/owner_buyer/buy_real_estate/owner_buyer_buy_real_estate_page.dart';
@@ -83,6 +87,16 @@ class PageRoutes {
       name: PageNames.BROKER_DASHBOARD,
       page: () => const DashboardPage(),
       binding: BrokerDashboardBinding(),
+    ),
+    GetPage(
+      name: PageNames.BROKER_REAL_ESTATE_OPEN_TO_SELL,
+      page: () => const BrokerListRealEstateOpenToSellPage(),
+      binding: BrokerListRealEstateOpenToSellBinding(),
+    ),
+    GetPage(
+      name: PageNames.BROKER_REAL_ESTATE_DETAIL,
+      page: () => const BrokerRealEstateDetailPage(),
+      binding: BrokerRealEstateDetailBinding(),
     ),
   ];
 }
