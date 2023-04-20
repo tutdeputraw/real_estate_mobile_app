@@ -196,6 +196,28 @@ class RetrofitAPI {
     return response;
   }
 
+  static Future<APIResponseObject?> updateRealEstateSalesPhase({
+    required String orgname,
+    required String userMSP,
+    required String realEstateSalesRecordId,
+    required String salesPhase,
+  }) async {
+    final response = await RetrofitHelper.post<APIResponseObject>(
+      path: '/realEstate/salesRecord/updateSalesPhase',
+      body: {
+        'organizationName': orgname,
+        'userMSP': userMSP,
+        'realEstateSalesRecordId': realEstateSalesRecordId,
+        'salesPhase': salesPhase,
+      },
+      converter: (json) => APIResponseObject.fromJson(
+        json,
+        (itemJson) {},
+      ),
+    );
+    return response;
+  }
+
   static Future<APIResponseObject?> changeRealEstateOwner({
     required String orgname,
     required String userMSP,

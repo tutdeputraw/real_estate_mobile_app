@@ -22,10 +22,12 @@ class SignInController extends GetxController {
 
     print('URLRUL ${RetrofitHelper.baseUrl}');
 
+    String userMSP = 'authenticated_users';
+
     final response = await RetrofitAPI.getUserByEmailAndName(
       email: teEmail.text,
       orgName: teOrg.text,
-      userMSP: teMSP.text,
+      userMSP: userMSP,
       userName: teName.text,
     );
 
@@ -36,7 +38,7 @@ class SignInController extends GetxController {
     print("RESPONE ${response.data.first.record.npwpNumber}");
 
     final user = response.data.first.record;
-    user.msp = teMSP.text;
+    user.msp = userMSP;
     user.organizationName = teOrg.text;
 
     // if (!response['result']) {

@@ -26,6 +26,10 @@ class PageNames {
   // external advisor
   static const EXTERNAL_ADVISOR_DASHBOARD = "/external-advisor/dashboard";
   static const EXTERNAL_ADVISOR_BUYER_HOME = "/external-advisor/home";
+  static const EXTERNAL_ADVISOR_REAL_ESTATE_DETAIL =
+      "/external-advisor/real-estate-detail";
+  static const EXTERNAL_ADVISOR_REAL_ESTATE_OPEN_TO_SELL =
+      "/external-advisor/real-estate/open-to-sell";
 
   // broker
   static const BROKER_DASHBOARD = "/broker/dashboard";

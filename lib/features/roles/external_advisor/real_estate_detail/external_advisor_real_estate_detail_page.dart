@@ -2,13 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:real_estate_mobile_app/features/real_estate/detail/components/real_estate_history/real_estate_detail_history_page.dart';
 import 'package:real_estate_mobile_app/features/real_estate/detail/components/real_estate_information/real_estate_detail_information_page.dart';
-import 'package:real_estate_mobile_app/features/real_estate/sales_record/real_estate_sales_record_controller.dart';
 import 'package:real_estate_mobile_app/features/real_estate/sales_record/real_estate_sales_record_page.dart';
-import 'package:real_estate_mobile_app/features/roles/broker/real_estate_detail/broker_real_estate_detail_controller.dart';
-import 'package:real_estate_mobile_app/features/roles/broker/real_estate_detail/components/broker_real_estate_detail_form.dart';
+import 'package:real_estate_mobile_app/features/roles/external_advisor/real_estate_detail/external_advisor_real_estate_detail_controller.dart';
 
-class BrokerRealEstateDetailPage extends StatelessWidget {
-  const BrokerRealEstateDetailPage({super.key});
+class ExternalAdvisorRealEstateDetailPage extends StatelessWidget {
+  const ExternalAdvisorRealEstateDetailPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,10 +14,11 @@ class BrokerRealEstateDetailPage extends StatelessWidget {
       appBar: AppBar(title: const Text('Real Estate Detail')),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: GetBuilder<BrokerRealEstateDetailController>(
+        child: GetBuilder<ExternalAdvisorRealEstateDetailController>(
           builder: (controller) {
             return SingleChildScrollView(
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   const SizedBox(height: 16),
                   const Text("real estate information"),
@@ -32,24 +31,19 @@ class BrokerRealEstateDetailPage extends StatelessWidget {
                   const RealEstateSalesRecordPage(),
                   const SizedBox(height: 16),
                   const Text("real estate sales Form"),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      ElevatedButton(
-                        onPressed: controller.preparationOnClicked,
-                        child: const Text('Preparation'),
-                      ),
-                      ElevatedButton(
-                        onPressed: controller.dueDiligenceOnCLicked,
-                        child: const Text('Due diligence'),
-                      ),
-                      ElevatedButton(
-                        onPressed: controller.completionOnCLicked,
-                        child: const Text('Completion'),
-                      ),
-                    ],
+                  const SizedBox(height: 8),
+                  TextFormField(
+                    // initialValue: controller.dataObj?.propertyAgentId,
+                    decoration: const InputDecoration(
+                      labelText: 'Real Estate Assessment',
+                      // errorText: 'Error message',
+                      border: OutlineInputBorder(),
+                    ),
                   ),
-                  const BrokerRealEstateDetailForm(),
+                  ElevatedButton(
+                    onPressed: () {},
+                    child: const Text('Submit'),
+                  ),
                 ],
               ),
             );
