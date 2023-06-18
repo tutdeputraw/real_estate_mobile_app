@@ -34,6 +34,10 @@ class ExternalAdvisorRealEstateDetailPage extends StatelessWidget {
                   const SizedBox(height: 8),
                   TextFormField(
                     // initialValue: controller.dataObj?.propertyAgentId,
+                    controller: controller.teRealEstateAssessment,
+                    keyboardType: TextInputType.multiline,
+                    minLines: 5, //Normal textInputField will be displayed
+                    maxLines: 10,
                     decoration: const InputDecoration(
                       labelText: 'Real Estate Assessment',
                       // errorText: 'Error message',
@@ -41,7 +45,7 @@ class ExternalAdvisorRealEstateDetailPage extends StatelessWidget {
                     ),
                   ),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: controller.submitRealEstateAssessment,
                     child: const Text('Submit'),
                   ),
                 ],

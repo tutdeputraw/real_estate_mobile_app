@@ -17,8 +17,8 @@ class APIResponseList<T> {
       data: json['data'].length == 0
           ? []
           : List<T>.from(json['data'].map((item) => fromJsonT(item))),
-      message: json['message'],
-      success: json['success'],
+      message: json['message']??'',
+      success: json['success']??'',
     );
   }
 }

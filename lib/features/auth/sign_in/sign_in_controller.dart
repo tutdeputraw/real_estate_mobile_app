@@ -22,7 +22,7 @@ class SignInController extends GetxController {
 
     print('URLRUL ${RetrofitHelper.baseUrl}');
 
-    String userMSP = 'authenticated_users';
+    String userMSP = 'users';
 
     final response = await RetrofitAPI.getUserByEmailAndName(
       email: teEmail.text,

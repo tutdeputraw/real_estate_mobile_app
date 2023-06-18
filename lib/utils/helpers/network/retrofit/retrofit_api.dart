@@ -29,7 +29,7 @@ class RetrofitAPI {
     return response;
   }
 
-  static Future<APIResponseList<User>?> getUserByEmailAndName({
+  static Future<APIResponseObject<User>?> getUserByEmailAndName({
     required String orgName,
     required String userName,
     required String userMSP,
@@ -209,6 +209,28 @@ class RetrofitAPI {
         'userMSP': userMSP,
         'realEstateSalesRecordId': realEstateSalesRecordId,
         'salesPhase': salesPhase,
+      },
+      converter: (json) => APIResponseObject.fromJson(
+        json,
+        (itemJson) {},
+      ),
+    );
+    return response;
+  }
+
+  static Future<APIResponseObject?> updateRealEstateAssessment({
+    required String orgname,
+    required String userMSP,
+    required String realEstateSalesRecordId,
+    required String realEstateAssessment,
+  }) async {
+    final response = await RetrofitHelper.post<APIResponseObject>(
+      path: '/realEstate/salesRecord/updateRealEstateAssessment',
+      body: {
+        'organizationName': orgname,
+        'userMSP': userMSP,
+        'realEstateSalesRecordId': realEstateSalesRecordId,
+        'realEstateAssessment': realEstateAssessment,
       },
       converter: (json) => APIResponseObject.fromJson(
         json,
